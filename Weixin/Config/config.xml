@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+	<!--基类-->
+	<object id="baseDao" type="Weixin.Dao.BaseDao, Weixin.Dao">
+		<property name="AdoTemplate" ref="adoTemplate"/>
+	</object>
+	<object id="baseService" type="Weixin.Service.BaseService,Weixin.Service">
+		<property name="BaseDao" ref="baseDao" />
+	</object>
+	
+	<!--系统管理-->
+	<object id="sysDao" type="Weixin.Dao.SysDao,Weixin.Dao"  parent="baseDao">
+	</object>
+	<object id="sysService" type="Weixin.Service.SysService,Weixin.Service"  parent="baseService">
+		<property name="SysDao" ref="sysDao" />
+	</object>
+
+  <!--管理员-->
+  <object id="merchantDao" type="Weixin.Dao.MerchantDao,Weixin.Dao"  parent="baseDao">
+  </object>
+  <object id="merchantService" type="Weixin.Service.MerchantService,Weixin.Service"  parent="baseService">
+    <property name="MerchantDao" ref="merchantDao" />
+  </object>
+
+</objects>

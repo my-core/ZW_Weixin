@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <!--登录-->
+	<object type="Manage/Login.aspx">
+		<property name="SysService" ref="sysService"/>
+	</object>
+  <object type="Manage/Index.aspx">
+    <property name="SysService" ref="sysService"/>
+  </object>
+  <!--Sys.ashx-->
+	<object type="Weixin.Web.Manage.Ajax.Sys,Weixin.Web">
+		<property name="SysService" ref="sysService"/>
+	</object>
+	<object type="Manage/Sys/AdminAdd.aspx">
+		<property name="SysService" ref="sysService"/>
+	</object>
+	<object type="Manage/Sys/ActionAdd.aspx">
+		<property name="SysService" ref="sysService"/>
+	</object>
+	<object type="Manage/Sys/GroupAdd.aspx">
+		<property name="SysService" ref="sysService"/>
+	</object>
+  <!--Merchant.ashx-->
+  <object type="Weixin.Web.Manage.Ajax.Merchant,Weixin.Web">
+    <property name="MerchantService" ref="merchantService"/>
+  </object>
+  <object type="Manage/Merchant/MerchantAdd.aspx">
+    <property name="MerchantService" ref="merchantService"/>
+  </object>
+  <object type="Manage/Merchant/WechatAdd.aspx">
+    <property name="MerchantService" ref="merchantService"/>
+  </object>
+</objects>

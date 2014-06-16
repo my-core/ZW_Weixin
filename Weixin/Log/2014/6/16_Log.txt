@@ -1,0 +1,125 @@
+--------------------------------系统出现异常http://localhost:5555/Manage/Merchant/WechatList.aspx[11:40]--------------------------------
+错误消息：g:\测试Project\Weixin_Test\Weixin\Manage\Merchant\WechatList.aspx(9): error CS0103: 当前上下文中不存在名称“AdminTitle”
+发生时间：2014/06/16 11:40:50
+错误源： System.Web
+站点地址：http://localhost:5555/Manage/Merchant/WechatList.aspx
+引发异常的方法： System.Web.Compilation.BuildResult CompileWebFile(System.Web.VirtualPath)
+堆栈信息：    在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Util.VirtualEnvironment.HttpRuntimeEnvironment.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Util.VirtualEnvironment.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Objects.Factory.Support.WebObjectUtils.CreateHandler(String pageUrl)
+   在 Spring.Web.Support.PageHandlerFactory.CreateHandlerInstance(IConfigurableApplicationContext appContext, HttpContext context, String requestType, String rawUrl, String physicalPath)
+   在 Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   在 Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   在 System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   在 System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ 
+--------------------------------系统出现异常http://localhost:5555/Manage/Merchant/WechatList.aspx[11:43]--------------------------------
+错误消息：g:\测试Project\Weixin_Test\Weixin\Manage\Merchant\WechatList.aspx(9): error CS0103: 当前上下文中不存在名称“AdminTitle”
+发生时间：2014/06/16 11:43:50
+错误源： System.Web
+站点地址：http://localhost:5555/Manage/Merchant/WechatList.aspx
+引发异常的方法： System.Web.Compilation.BuildResult PostProcessFoundBuildResult(System.Web.Compilation.BuildResult, Boolean, System.Web.VirtualPath)
+堆栈信息：    在 System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Util.VirtualEnvironment.HttpRuntimeEnvironment.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Util.VirtualEnvironment.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   在 Spring.Objects.Factory.Support.WebObjectUtils.CreateHandler(String pageUrl)
+   在 Spring.Web.Support.PageHandlerFactory.CreateHandlerInstance(IConfigurableApplicationContext appContext, HttpContext context, String requestType, String rawUrl, String physicalPath)
+   在 Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   在 Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   在 System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   在 System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ 
+--------------------------------系统出现异常http://localhost:5555/Manage/Merchant/WechatAdd.aspx[11:45]--------------------------------
+错误消息：列“WechantNo”不属于表 T_Wechat。
+发生时间：2014/06/16 11:45:34
+错误源： System.Data
+站点地址：http://localhost:5555/Manage/Merchant/WechatAdd.aspx
+引发异常的方法： System.Data.DataColumn GetDataColumn(System.String)
+堆栈信息：    在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Weixin.Service.MerchantService.SaveWechatInfo(DataTable dt) 位置 G:\测试Project\Weixin_Test\Weixin.Service\Merchant\MerchantService.cs:行号 73
+   在 _dynamic_Weixin.Service.MerchantService.SaveWechatInfo(Object , Object[] )
+   在 Spring.Reflection.Dynamic.SafeMethod.Invoke(Object target, Object[] arguments)
+   在 Spring.Aop.Framework.DynamicMethodInvocation.InvokeJoinpoint()
+   在 Spring.Aop.Framework.AbstractMethodInvocation.Proceed()
+   在 Spring.Transaction.Interceptor.TransactionInterceptor.Invoke(IMethodInvocation invocation)
+   在 Spring.Aop.Framework.AbstractMethodInvocation.Proceed()
+   在 Spring.Aop.Framework.DynamicProxy.AdvisedProxy.Invoke(Object proxy, Object target, Type targetType, MethodInfo targetMethod, MethodInfo proxyMethod, Object[] args, IList interceptors)
+   在 CompositionAopProxy_1002336c574d4d4f8b422fd8d8f2cbb6.SaveWechatInfo(DataTable dt)
+   在 Weixin.Web.Manage.Merchant.WechatAdd.BtnSubmit_Click(Object sender, EventArgs e) 位置 G:\测试Project\Weixin_Test\Weixin\Manage\Merchant\WechatAdd.aspx.cs:行号 84
+   在 System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+ 
+--------------------------------系统出现异常http://localhost:5555/Manage/Merchant/WechatAdd.aspx[11:47]--------------------------------
+错误消息：微信请求发生错误！错误代码：41004，说明：appsecret missing
+发生时间：2014/06/16 11:47:33
+错误源： Weixin.MP
+站点地址：http://localhost:5555/Manage/Merchant/WechatAdd.aspx
+引发异常的方法： T GetJson[T](System.String, System.Text.Encoding)
+堆栈信息：    在 Weixin.MP.HttpUtility.Get.GetJson[T](String url, Encoding encoding) 位置 G:\测试Project\Weixin_Test\Weixin.MP\HttpUtility\Get.cs:行号 27
+   在 Weixin.MP.CommonAPIs.CommonApi.GetToken(String appid, String secret, String grant_type) 位置 G:\测试Project\Weixin_Test\Weixin.MP\CommonAPIs\CommonApi.cs:行号 38
+   在 Weixin.MP.CommonAPIs.AccessTokenContainer.GetTokenResult(String appId, Boolean getNewToken) 位置 G:\测试Project\Weixin_Test\Weixin.MP\CommonAPIs\AccessTokenContainer.cs:行号 85
+   在 Weixin.MP.CommonAPIs.AccessTokenContainer.GetToken(String appId, Boolean getNewToken) 位置 G:\测试Project\Weixin_Test\Weixin.MP\CommonAPIs\AccessTokenContainer.cs:行号 65
+   在 Weixin.MP.CommonAPIs.AccessTokenContainer.TryGetToken(String appId, String appSecret, Boolean getNewToken) 位置 G:\测试Project\Weixin_Test\Weixin.MP\CommonAPIs\AccessTokenContainer.cs:行号 54
+   在 Weixin.Service.MerchantService.SaveWechatInfo(DataTable dt) 位置 G:\测试Project\Weixin_Test\Weixin.Service\Merchant\MerchantService.cs:行号 75
+   在 _dynamic_Weixin.Service.MerchantService.SaveWechatInfo(Object , Object[] )
+   在 Spring.Reflection.Dynamic.SafeMethod.Invoke(Object target, Object[] arguments)
+   在 Spring.Aop.Framework.DynamicMethodInvocation.InvokeJoinpoint()
+   在 Spring.Aop.Framework.AbstractMethodInvocation.Proceed()
+   在 Spring.Transaction.Interceptor.TransactionInterceptor.Invoke(IMethodInvocation invocation)
+   在 Spring.Aop.Framework.AbstractMethodInvocation.Proceed()
+   在 Spring.Aop.Framework.DynamicProxy.AdvisedProxy.Invoke(Object proxy, Object target, Type targetType, MethodInfo targetMethod, MethodInfo proxyMethod, Object[] args, IList interceptors)
+   在 CompositionAopProxy_bbc69c05e7504fd68dc8a545c89a7056.SaveWechatInfo(DataTable dt)
+   在 Weixin.Web.Manage.Merchant.WechatAdd.BtnSubmit_Click(Object sender, EventArgs e) 位置 G:\测试Project\Weixin_Test\Weixin\Manage\Merchant\WechatAdd.aspx.cs:行号 84
+   在 System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+ 
+--------------------------------系统出现异常http://localhost:5555/Manage/Merchant/WechatAdd.aspx[13:05]--------------------------------
+错误消息：输入字符串的格式不正确。
+发生时间：2014/06/16 13:05:35
+错误源： mscorlib
+站点地址：http://localhost:5555/Manage/Merchant/WechatAdd.aspx
+引发异常的方法： Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+堆栈信息：    在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Byte.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.String.System.IConvertible.ToByte(IFormatProvider provider)
+   在 System.Data.Common.ByteStorage.Set(Int32 record, Object value)
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+
+ 
+--------------------------------微信接口：TryGetToken[13:06]--------------------------------
+微信请求发生错误！错误代码：41004，说明：appsecret missing
+
+ 
+--------------------------------微信接口：TryGetToken[13:10]--------------------------------
+微信请求发生错误！错误代码：40013，说明：invalid appid
+
+ 
