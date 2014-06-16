@@ -27,6 +27,14 @@
                 <td><asp:TextBox ID="txtWechatNo" runat="server" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="请输入微信号"></asp:TextBox></td>
             </tr>
             <tr>
+                <td class="tr w100">appID：</td>
+                <td><asp:TextBox ID="txtAppID" runat="server" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="请输入appID"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td class="tr w100">appsecret：</td>
+                <td><asp:TextBox ID="txtAppSecret" runat="server" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="appsecret"></asp:TextBox></td>
+            </tr>
+            <tr>
                 <td class="tr w100">密码：</td>
                 <td>
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="请输入密码"></asp:TextBox>

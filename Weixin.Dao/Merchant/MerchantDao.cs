@@ -51,7 +51,7 @@ namespace Weixin.Dao
         /// </summary>
         public int GetWechatList(Pager p, Hashtable hs)
         {
-            string sql = @"select a.*,b.Name as MerchantName, c.AdminName as CreateAdmin,d.AdminName as UpdateAdmin from T_WeChat a 
+            string sql = @"select a.*,b.Name as MerchantName, c.AdminName as CreateAdmin,d.AdminName as UpdateAdmin from T_WX_WeChat a 
                             left join T_Merchant b on b.ID=a.MerchantID
                             left join T_Admin c on c.ID=a.CreateBy
                             left join T_Admin d on d.ID=a.UpdateBy";

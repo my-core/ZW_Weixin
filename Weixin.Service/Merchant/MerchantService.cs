@@ -9,6 +9,7 @@ using Weixin.Common;
 using System.Collections;
 using Spring.Transaction.Interceptor;
 using Weixin.MP.CommonAPIs;
+using Weixin.MP.AdvancedAPIs;
 
 namespace Weixin.Service
 {
@@ -70,11 +71,13 @@ namespace Weixin.Service
         {
             if (dt.Rows.Count == 0)
                 return RESULT_FAILED;
-            string appId = dt.Rows[0]["WechatNo"].ToString();
-            string appSecret = dt.Rows[0]["Password"].ToString();
+            string appId = dt.Rows[0]["AppID"].ToString();
+            string appSecret = dt.Rows[0]["AppSecret"].ToString();
             try
             {
-                string token = AccessTokenContainer.TryGetToken(appId, appSecret, false);
+               OAuthAccessTokenResult result= OAuth.GetAccessToken(appId, appSecret, "", "");
+               string token = result.access_token;
+                dt.Rows[0]["Token"] = token;
             }
             catch(Exception ex)
             {

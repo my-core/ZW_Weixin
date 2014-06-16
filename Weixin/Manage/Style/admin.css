@@ -27,7 +27,8 @@
 .btn{ width:112px; height:33px; font-size:15px; font-weight:bold; border:none; background:url(images/login-btn.jpg) no-repeat; color:#fff; cursor:pointer;}
 .searchTable{ border:none;}
 .searchTable td{ padding:0px 10px;}
-.searchBtn{ background:#009AE2; border:solid 2px #CDE6FE; padding:10px; color:#fff;}
+.searchBtn{ background:#00A2CA; border:solid 2px #CDE6FE; padding:5px 10px; color:#fff; cursor:pointer;}
+.searchBtn:hover { background:#009AE2}
 /*-------common------*/
 .w70{ width:70px;}
 .w100{ width:100px;}

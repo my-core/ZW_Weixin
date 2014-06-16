@@ -48,7 +48,7 @@ namespace Weixin.Web.Manage.Merchant
         {
             if (_ID == 0)
                 return;
-            DataTable dt = merchantService.GetDataByKey("T_Wechat","ID",_ID);
+            DataTable dt = merchantService.GetDataByKey("T_WX_WeChat", "ID", _ID);
             DataRow dr = dt.Rows[0];
             this.txtName.Text = dr["Name"].ToString();
             this.txtWechatNo.Text = dr["WechatNo"].ToString();
@@ -61,7 +61,7 @@ namespace Weixin.Web.Manage.Merchant
         /// <param name="e"></param>
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            DataTable dt = merchantService.GetDataByKey("T_Wechat", "ID", _ID);
+            DataTable dt = merchantService.GetDataByKey("T_WX_WeChat", "ID", _ID);
             DataRow dr;
             if (dt.Rows.Count > 0)
             {
@@ -75,6 +75,8 @@ namespace Weixin.Web.Manage.Merchant
                 dr = dt.NewRow();
                 dt.Rows.Add(dr);
                 dr = dt.Rows[0];
+                dr["AppID"] = this.txtAppID.Text;
+                dr["AppSecret"] = this.txtAppSecret.Text;
                 dr["Password"] = this.txtPassword.Text;
                 dr["CreateBy"] = AdminInfo.ID;
                 dr["CreateTime"] = DateTime.Now;

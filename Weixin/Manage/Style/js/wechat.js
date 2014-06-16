@@ -21,10 +21,10 @@ function GetList() {
                         { field: 'Token', title: '令牌', width: 60, align: 'center' },
                         { field: 'ApiUrl', title: '接口地址', width: 120, align: 'center' },
                         { field: 'ValidDate', title: '校验时间', width: 120, align: 'center'},
-                        { field: 'TextLimitCount', title: '文本限制数/月', width: 60, align: 'center' },
-                        { field: 'ImageTextLimitCount', title: '图文限制数/月', width: 60, align: 'center' },
-                        { field: 'RequestLimitCount', title: '请求限制数/月', width: 60, align: 'center' },
-                        { field: 'RequestCount', title: '请求总数/月', width: 60, align: 'center' }
+                        { field: 'TextLimitCount', title: '文本限制数/月', width: 110, align: 'center' },
+                        { field: 'ImageTextLimitCount', title: '图文限制数/月', width: 110, align: 'center' },
+                        { field: 'RequestLimitCount', title: '请求限制数/月', width: 110, align: 'center' },
+                        { field: 'RequestCount', title: '请求总数/月', width: 110, align: 'center' }
                         ]],
         loadMsg: '正在加载数据，请稍候……',
         rownumbers: true, //显示记录数

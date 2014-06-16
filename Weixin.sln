@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin", "Weixin\Weixin.csproj", "{CC032F83-103B-4970-8969-14647CD9893A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Service", "Weixin.Service\Weixin.Service.csproj", "{B38D3659-F52A-4839-8199-771BE66D7E0E}"
