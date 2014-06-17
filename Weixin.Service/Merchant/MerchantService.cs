@@ -75,11 +75,12 @@ namespace Weixin.Service
             string appSecret = dt.Rows[0]["AppSecret"].ToString();
             try
             {
-               OAuthAccessTokenResult result= OAuth.GetAccessToken(appId, appSecret, "", "");
-               string token = result.access_token;
+                OAuthAccessTokenResult result = OAuth.GetAccessToken(appId, appSecret, Guid.NewGuid().ToString(), "");
+                string openid = result.openid;
+                string token = result.access_token;
                 dt.Rows[0]["Token"] = token;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Utils.SaveLog("微信接口：TryGetToken", ex.Message);
             }
