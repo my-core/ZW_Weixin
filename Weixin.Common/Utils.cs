@@ -56,17 +56,6 @@ namespace Weixin.Common
                 return "";
             }
         }
-
-        /// <summary>
-        /// 从一个Datatable中按条件分离出另一个Datatable
-        /// </summary>
-        public static DataTable SelectDataTable(DataTable dt, string strWhere)
-        {
-            DataView view = new DataView();
-            view.Table = dt;
-            view.RowFilter = strWhere;
-            return view.ToTable();
-        }
         
         #region 构造TreeGrid树型表格jsono数据
         /// <summary>
@@ -102,5 +91,31 @@ namespace Weixin.Common
             sb.Remove(sb.Length - 1, 1);
         }
         #endregion
+
+        /// <summary>
+        /// 从一个Datatable中按条件分离出另一个Datatable
+        /// </summary>
+        public static DataTable SelectDataTable(DataTable dt, string strWhere)
+        {
+            DataView view = new DataView();
+            view.Table = dt;
+            view.RowFilter = strWhere;
+            return view.ToTable();
+        }
+        /// <summary>
+        /// 随机生成指定长度的字母
+        /// </summary>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        public static string GetRandom(int len)
+        {
+            Random r = new Random();
+            string str = string.Empty;
+            for (int i = 0; i < len; i++)
+            {
+                str += ((char)r.Next(97, 123)).ToString();
+            }
+            return str;
+        }
     }
 }

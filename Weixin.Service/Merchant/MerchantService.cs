@@ -75,16 +75,17 @@ namespace Weixin.Service
             string appSecret = dt.Rows[0]["AppSecret"].ToString();
             try
             {
-                OAuthAccessTokenResult result = OAuth.GetAccessToken(appId, appSecret, Guid.NewGuid().ToString(), "");
-                string openid = result.openid;
-                string token = result.access_token;
-                dt.Rows[0]["Token"] = token;
+                AccessTokenContainer.TryGetToken(appId, appSecret, false);
             }
             catch (Exception ex)
             {
                 Utils.SaveLog("微信接口：TryGetToken", ex.Message);
+                return RESULT_FAILED;
             }
-            return RESULT_SUCCESS;
+            if (merchantDao.UpdateDataTable(dt) > 0)
+                return RESULT_SUCCESS;
+            else
+                return RESULT_FAILED;
         }
     }
 }

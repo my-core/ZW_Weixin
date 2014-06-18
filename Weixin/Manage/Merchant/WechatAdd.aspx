@@ -13,7 +13,7 @@
                 <td class="tr w100">类型：</td>
                 <td>
                     <asp:RadioButtonList runat="server" ID="rblType">
-                        <asp:ListItem Value="0">订阅号</asp:ListItem>
+                        <asp:ListItem Value="0" Selected="True">订阅号</asp:ListItem>
                         <asp:ListItem Value="1">服务号</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
@@ -33,13 +33,6 @@
             <tr>
                 <td class="tr w100">appsecret：</td>
                 <td><asp:TextBox ID="txtAppSecret" runat="server" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="appsecret"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td class="tr w100">密码：</td>
-                <td>
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="请输入密码"></asp:TextBox>
-                    <span style="color:Red;">为空则不修改</span>
-                </td>
             </tr>
         </table>
         <div class="action">

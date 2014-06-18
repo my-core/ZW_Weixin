@@ -61,12 +61,15 @@ namespace Weixin.Web.Manage.Merchant
         /// <param name="e"></param>
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            //微信号：gh_424afd1ed04b
+            //appID：wx3fed1c00ef33967f
+            //appsecret：fae2442723ffbf60374ec1f588a8b666
+
             DataTable dt = merchantService.GetDataByKey("T_WX_WeChat", "ID", _ID);
             DataRow dr;
             if (dt.Rows.Count > 0)
             {
                 dr = dt.Rows[0];
-                dr["Name"] = this.txtName.Text;
                 dr["UpdateBy"] = AdminInfo.ID;
                 dr["UpdateTime"] = DateTime.Now;
             }
@@ -77,14 +80,21 @@ namespace Weixin.Web.Manage.Merchant
                 dr = dt.Rows[0];
                 dr["AppID"] = this.txtAppID.Text;
                 dr["AppSecret"] = this.txtAppSecret.Text;
-                dr["Password"] = this.txtPassword.Text;
+                string token = Utils.GetRandom(8);
+                dr["Token"] = token;
+                dr["ApiUrl"] = Utils.GetConfig("BaseApiUrl") + DESEncrypt.MD5(token);
                 dr["CreateBy"] = AdminInfo.ID;
                 dr["CreateTime"] = DateTime.Now;
             }
+            dr["Name"] = this.txtName.Text;
             dr["Type"] = this.rblType.SelectedValue;
             dr["WechatNo"] = this.txtWechatNo.Text;
+            if (!string.IsNullOrEmpty(AdminInfo.MerchantID.ToString()))
+            {
+                dr["MerchantID"] = AdminInfo.MerchantID;
+            }
             int res = merchantService.SaveWechatInfo(dt);
-            if (res > 0)
+            if (res == 0)
                 InvokeScript("CloseWin('保存成功！',parent.GetList)");
             else
                 InvokeScript("CloseWin('保存失败！')");
