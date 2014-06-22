@@ -11,6 +11,8 @@ namespace Weixin.Dao
 {
     public class MerchantDao : BaseDao, IMerchantDao
     {
+        #region 商户
+
         /// 商户列表
         /// </summary>
         public int GetMerchantList(Pager p, Hashtable hs)
@@ -46,6 +48,11 @@ namespace Weixin.Dao
             p.ItemCount = Convert.ToInt32(ds.Tables[1].Rows[0][0]);
             return 0;
         }
+
+        #endregion
+
+        #region 微信号
+
         /// <summary>
         /// 微信号列表
         /// </summary>
@@ -82,5 +89,34 @@ namespace Weixin.Dao
             p.ItemCount = Convert.ToInt32(ds.Tables[1].Rows[0][0]);
             return 0;
         }
+        /// <summary>
+        /// 获取微信号
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetWechatInfo(Hashtable hs)
+        {
+            string sql = "select * from T_WX_Wechat where 1=1 ";
+            IDbParameters param = AdoTemplate.CreateDbParameters();
+            if (hs.Contains("ID"))
+            {
+                sql += " and ID=@ID";
+                param.AddWithValue("ID", hs["ID"]);
+            }
+            if (hs.Contains("WechatNo"))
+            {
+                sql += " and WechatNo=@WechatNo";
+                param.AddWithValue("WechatNo", hs["WechatNo"]);
+            }
+            if (hs.Contains("AppID"))
+            {
+                sql += " and AppID=@AppID";
+                param.AddWithValue("AppID", hs["AppID"]);
+            }
+            DataTable dt = AdoTemplate.DataTableCreateWithParams(CommandType.Text, sql, param);
+            dt.TableName = "T_WX_Wechat";
+            return dt;
+        }
+
+        #endregion
     }
 }

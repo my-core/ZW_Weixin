@@ -4,7 +4,10 @@
 	<object type="Manage/Login.aspx">
 		<property name="SysService" ref="sysService"/>
 	</object>
-  <object type="Manage/Index.aspx">
+  <object type="Manage/index.aspx">
+    <property name="SysService" ref="sysService"/>
+  </object>
+  <object type="Manage/weindex.aspx">
     <property name="SysService" ref="sysService"/>
   </object>
   <!--Sys.ashx-->

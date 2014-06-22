@@ -24,7 +24,8 @@ function GetList() {
                         { field: 'TextLimitCount', title: '文本限制数/月', width: 110, align: 'center' },
                         { field: 'ImageTextLimitCount', title: '图文限制数/月', width: 110, align: 'center' },
                         { field: 'RequestLimitCount', title: '请求限制数/月', width: 110, align: 'center' },
-                        { field: 'RequestCount', title: '请求总数/月', width: 110, align: 'center' }
+                        { field: 'RequestCount', title: '请求总数/月', width: 110, align: 'center' },
+                        { field: 'AppID', title: '操作', width: 110, align: 'center',formatter:GetAction },
                         ]],
         loadMsg: '正在加载数据，请稍候……',
         rownumbers: true, //显示记录数
@@ -43,6 +44,10 @@ function GetWechatType(v) {
         return '订阅号'
     }
     return '服务号';
+}
+//操作
+function GetAction(v, row) {
+    return '<a href="/manage/weindex.aspx?id=' + row.ID + '" target="parent">进入管理</a>';
 }
 //添加
 function Add() {

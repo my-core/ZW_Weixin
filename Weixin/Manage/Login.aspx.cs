@@ -10,7 +10,7 @@ using Weixin.Service;
 
 namespace Weixin.Web.Manage
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : AdminPage
     {
         //注入
         private ISysService sysService;
@@ -87,10 +87,7 @@ namespace Weixin.Web.Manage
             {
                 minfo.MerchantID = Convert.ToInt32(dr["MerchantID"]);
             }
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(minfo);
-            HttpCookie cookie = new HttpCookie("AdminInfo");
-            cookie.Value = DESEncrypt.Encrypt(json);
-            Response.Cookies.Add(cookie);
+            AdminInfo = minfo;
         }
     }
 }

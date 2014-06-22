@@ -26,6 +26,7 @@ namespace Weixin.Service
         }
         #endregion
 
+        #region 商户
         /// 商户列表
         /// </summary>
         public int GetMerchantList(Pager p, Hashtable hs)
@@ -54,6 +55,9 @@ namespace Weixin.Service
             }
             return RESULT_SUCCESS;
         }
+        #endregion 
+
+        #region 微信号
         /// <summary>
         /// 微信号列表
         /// </summary>
@@ -87,5 +91,47 @@ namespace Weixin.Service
             else
                 return RESULT_FAILED;
         }
+        /// <summary>
+        /// 获取微信号
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetWechatInfo(Hashtable hs )
+        {
+            return merchantDao.GetWechatInfo(hs);
+        }
+        /// <summary>
+        /// 获取微信号
+        /// </summary>
+        /// <returns></returns>
+        public WechatInfo GetWechatInfoById(int id)
+        {
+            DataTable dt = GetDataByKey("T_WX_Wechat", "ID", id);
+            if (dt.Rows.Count == 0)
+                return null;
+            return ObjectHelper<WechatInfo>.FillModel(dt.Rows[0]);
+        }
+        /// <summary>
+        /// 获取微信号
+        /// </summary>
+        /// <returns></returns>
+        public WechatInfo GetWechatInfoByNo(string wechatNo)
+        {
+            DataTable dt = GetDataByKey("T_WX_Wechat", "WechatNo", wechatNo);
+            if (dt.Rows.Count == 0)
+                return null;
+            return ObjectHelper<WechatInfo>.FillModel(dt.Rows[0]);
+        }
+        /// <summary>
+        /// 获取微信号
+        /// </summary>
+        /// <returns></returns>
+        public WechatInfo GetWechatInfoByAppid(string appid)
+        {
+            DataTable dt = GetDataByKey("T_WX_Wechat", "AppID", appid);
+            if (dt.Rows.Count == 0)
+                return null;
+            return ObjectHelper<WechatInfo>.FillModel(dt.Rows[0]);
+        }
+        #endregion 
     }
 }

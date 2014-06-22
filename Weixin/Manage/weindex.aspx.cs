@@ -12,7 +12,7 @@ using Weixin.Common;
 
 namespace Weixin.Web.Manage
 {
-    public partial class index : AdminPage
+    public partial class weindex : WechatPage
     {
         #region IOC注入
         private static ISysService sysService;
@@ -21,7 +21,21 @@ namespace Weixin.Web.Manage
             set { sysService = value; }
             get { return sysService; }
         }
+        private static IMerchantService merchantService;
+        public IMerchantService MerchantService
+        {
+            set { merchantService = value; }
+            get { return merchantService; }
+        }
         #endregion
+
+        /// <summary>
+        /// 微信ID
+        /// </summary>
+        public int _ID
+        {
+            get { return GetRequestInt("ID", 0); }
+        }
         /// <summary>
         /// 菜单
         /// </summary>
@@ -36,6 +50,10 @@ namespace Weixin.Web.Manage
             if (!IsPostBack)
             {
                 GetMenu();
+                if (_ID != 0)
+                {
+                    WechatInfo = merchantService.GetWechatInfoById(_ID);
+                }
             }
         }
         /// <summary>
@@ -46,7 +64,7 @@ namespace Weixin.Web.Manage
             StringBuilder sb = new StringBuilder();
             Hashtable hs = new Hashtable();
             hs.Add("Status",1);
-            hs.Add("ModuleID", 0);
+            hs.Add("ModuleID", 1);
             DataTable dt = sysService.GetActionList(hs);
             DataTable dt1 = Utils.SelectDataTable(dt, "isnull(ParentCode,'')=''");
             foreach (DataRow dr1 in dt1.Rows)

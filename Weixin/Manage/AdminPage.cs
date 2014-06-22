@@ -21,12 +21,19 @@ namespace Weixin.Web.Manage
         {
             get
             {
-                if (Request.Cookies["AdminInfo"] == null)
+                string str = CookieHelper.GetCookie("AdminInfo");
+                if (str == string.Empty)
                 {
                     return null;
                 }
-                string str = DESEncrypt.Decrypt(Request.Cookies["AdminInfo"].Value);
+                CookieHelper.UpdateCookie("AdminInfo", DateTime.Now.AddHours(2));
+                str = DESEncrypt.Decrypt(str);
                 return (AdminInfo)Newtonsoft.Json.JsonConvert.DeserializeObject(str, typeof(AdminInfo));
+            }
+            set
+            {
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(value);
+                CookieHelper.SetCookie("AdminInfo", json, DateTime.Now.AddHours(2));
             }
         }
         /// <summary>
@@ -50,9 +57,12 @@ namespace Weixin.Web.Manage
         /// </summary>
         public void IsLogin()
         {
-            if (AdminInfo == null)
+            if (Request.Url.ToString().ToLower().IndexOf("login.aspx") == -1)
             {
-                RegistScript("alert('未登录或登录已失效！');window.parent.location.href='/Manage/Login.aspx';");
+                if (AdminInfo == null)
+                {
+                    RegistScript("alert('未登录或登录已失效！');window.parent.location.href='/Manage/Login.aspx';");
+                }
             }
             return;
         }

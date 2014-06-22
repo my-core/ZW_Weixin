@@ -63,6 +63,11 @@ namespace Weixin.Dao
                 sql += " and Status=@Status ";
                 param.AddWithValue("Status", hs["Status"]);
             }
+            if (hs.Contains("ModuleID"))
+            {
+                sql += " and ModuleID=@ModuleID ";
+                param.AddWithValue("ModuleID", hs["ModuleID"]);
+            }
             DataSet ds = AdoTemplate.DataSetCreateWithParams(CommandType.Text, sql, param);
             return ds.Tables[0];
         }
