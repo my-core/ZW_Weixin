@@ -31,6 +31,16 @@
                 </td>
             </tr>
             <tr>
+                <td class="tr">模块：</td>
+                <td>
+                    <asp:RadioButtonList runat="server" ID="rblModuleID" RepeatLayout="Table" RepeatDirection="Horizontal">
+                        <asp:ListItem Value="0" Selected="True">系统</asp:ListItem>
+                        <asp:ListItem Value="1" Selected="True">商户</asp:ListItem>
+                        <asp:ListItem Value="2">微信</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+            </tr>
+            <tr>
                 <td style="width:100px;" class="tr">资源名称：</td>
                 <td><asp:TextBox ID="txtName" runat="server" CssClass="easyui-validatebox txt" data-options="required:true" missingmessage="请输入资源名称"></asp:TextBox></td>
             </tr>

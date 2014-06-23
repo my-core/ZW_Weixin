@@ -9,6 +9,7 @@
   </object>
   <object type="Manage/weindex.aspx">
     <property name="SysService" ref="sysService"/>
+    <property name="MerchantService" ref="merchantService"/>
   </object>
   <!--Sys.ashx-->
 	<object type="Weixin.Web.Manage.Ajax.Sys,Weixin.Web">

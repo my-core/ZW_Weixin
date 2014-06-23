@@ -33,6 +33,7 @@ namespace Weixin.Web.Manage
             set
             {
                 string json = Newtonsoft.Json.JsonConvert.SerializeObject(value);
+                json = DESEncrypt.Encrypt(json);
                 CookieHelper.SetCookie("AdminInfo", json, DateTime.Now.AddHours(2));
             }
         }

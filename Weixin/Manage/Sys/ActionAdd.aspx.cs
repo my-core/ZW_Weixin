@@ -59,6 +59,7 @@ namespace Weixin.Web.Manage.Admin
             DataRow dr = dt.Rows[0];
             this.txtParentCode.Text = Convert.ToString(dr["ParentCode"]);
             this.ddlType.SelectedValue = Convert.ToString(dr["Type"]);
+            this.rblModuleID.SelectedValue = Convert.ToString(dr["ModuleID"]);
             this.txtCode.Text = Convert.ToString(dr["Code"]);
             this.txtName.Text = Convert.ToString(dr["Name"]);
             this.txtLink.Text = Convert.ToString(dr["Link"]);
@@ -83,6 +84,7 @@ namespace Weixin.Web.Manage.Admin
             else
                 dr = dt.Rows[0];
             dr["Type"] = this.ddlType.SelectedValue;
+            dr["ModuleID"] = this.rblModuleID.SelectedValue;
             dr["Code"] = this.txtCode.Text;
             dr["Name"] = this.txtName.Text;
             dr["Link"] = this.txtLink.Text;

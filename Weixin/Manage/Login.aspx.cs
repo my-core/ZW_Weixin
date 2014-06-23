@@ -81,7 +81,7 @@ namespace Weixin.Web.Manage
             minfo.CreateTime = Convert.ToDateTime(dr["CreateTime"]);
             if (string.IsNullOrEmpty(dr["MerchantID"].ToString()))
             {
-                minfo.MerchantID = null;
+                minfo.MerchantID = 0;
             }
             else
             {

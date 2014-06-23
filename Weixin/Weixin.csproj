@@ -1063,6 +1063,7 @@
     <Content Include="Manage\Style\zTree_v3\js\jquery.ztree.exhide-3.5.min.js" />
     <Content Include="Manage\Style\zTree_v3\log v3.x.txt" />
     <Content Include="Manage\Style\zTree_v3\QUI 框架介绍.txt" />
+    <Content Include="Manage\weindex.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1182,6 +1183,16 @@
     </Compile>
     <Compile Include="Manage\UControl\ToolBar.ascx.designer.cs">
       <DependentUpon>ToolBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\WechatPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\weindex.aspx.cs">
+      <DependentUpon>weindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\weindex.aspx.designer.cs">
+      <DependentUpon>weindex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\WeixinHandler.cs" />
     <Compile Include="Manage\WeiXinHttpHandler.cs" />

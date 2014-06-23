@@ -10,7 +10,7 @@ namespace Weixin.Model
         public AdminInfo() { }
         
         private int _id;
-        private int? _merchantid;
+        private int _merchantid;
         private string _username;
         private string _password;
         private string _adminname;
@@ -29,7 +29,7 @@ namespace Weixin.Model
         /// <summary>
         /// 所属商户
         /// </summary>
-        public int? MerchantID
+        public int MerchantID
         {
             set { _merchantid = value; }
             get { return _merchantid; }
